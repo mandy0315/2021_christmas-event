@@ -1,4 +1,6 @@
 <template>
+  <snow-background />
+
   <div
     class="
       bg-light-bg
@@ -21,13 +23,13 @@
         <img
           v-show="!isHoverLetter"
           class="m-auto"
-          src="../assets/images/letter-start-1.png"
+          src="../../assets/images/letter-start-1.png"
           alt="merry christmas-letter1"
         />
         <img
           v-show="isHoverLetter"
           class="m-auto"
-          src="../assets/images/letter-start-2.png"
+          src="../../assets/images/letter-start-2.png"
           alt="merry christmas-letter1"
         />
       </div>
@@ -78,14 +80,14 @@
           class="w-full -right-1 -bottom-1 absolute"
           :class="{ 'animate-animated animate-fast animate-fadeInUp animate-delay': isOpenCard }"
         >
-          <img src="../assets/images/right-snow.png" alt="右邊雪地" />
+          <img src="../../assets/images/right-snow.png" alt="右邊雪地" />
         </div>
 
         <div
           class="-bottom-1 -left-1 w-1/2 absolute"
           :class="{ 'animate-animated animate-fast animate-fadeInUp animate-delay': isOpenCard }"
         >
-          <img src="../assets/images/left-snow.png" alt="左邊雪地" />
+          <img src="../../assets/images/left-snow.png" alt="左邊雪地" />
         </div>
 
         <div
@@ -101,7 +103,7 @@
           class="bottom-1/10 left-3/10 w-1/4 absolute"
           :class="{ 'animate-animated animate-fast animate-zoomIn animate-delay-2s': isOpenCard }"
         >
-          <img src="../assets/images/elk.png" alt="麋鹿" />
+          <img src="../../assets/images/elk.png" alt="麋鹿" />
         </div>
 
         <div
@@ -110,7 +112,7 @@
         >
           <img
             class="filter drop-shadow-blue75 dark:(drop-shadow-blue25)"
-            src="../assets/images/merry-christmas-title2.png"
+            src="../../assets/images/merry-christmas-title2.png"
             alt="merry christmas 標題"
           />
         </div>
@@ -133,9 +135,9 @@
     <Icon-mdi-restore class="text-light-icon text-26px inline-block dark:(text-gray-200)" />
   </button>
 
-  <button class="top-4 right-4 z-100 button-none absolute hover:(opacity-50)" @click.prevent="handleDayClick()">
-    <Icon-ph-sun v-show="isNight === true" class="text-30px text-gray-200 inline-block" />
-    <Icon-ph-moon-stars v-show="isNight === false" class="text-light-icon text-30px inline-block" />
+  <button class="top-4 right-4 z-100 button-none absolute hover:(opacity-50)" @click.prevent="handleIsNight()">
+    <Icon-ph-sun v-show="isNight" class="text-30px text-gray-200 inline-block" />
+    <Icon-ph-moon-stars v-show="!isNight" class="text-light-icon text-30px inline-block" />
   </button>
 </template>
 <script setup>
@@ -143,10 +145,10 @@ import { ref } from 'vue'
 const isNight = ref(false),
   isOpenCard = ref(false),
   isHoverLetter = ref(false),
-  emit = defineEmits(['handleDayClick'])
+  emit = defineEmits(['handleIsNight'])
 
-const handleDayClick = () => {
+const handleIsNight = () => {
   isNight.value = !isNight.value === true
-  emit('handleDayClick', isNight.value)
+  emit('handleIsNight', isNight.value)
 }
 </script>

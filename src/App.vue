@@ -1,14 +1,13 @@
 <template>
   <div class="card-container relative" :class="[isNight ? 'dark' : 'light']">
-    <snow-background />
-    <christmas-card @handleDayClick="handleDay" />
+    <christmas-card @handleIsNight="getIsNight" />
   </div>
 </template>
 <script setup>
 import { ref } from 'vue'
 const isNight = ref(false)
 
-const handleDay = (val) => {
+const getIsNight = (val) => {
   isNight.value = val
 }
 </script>
