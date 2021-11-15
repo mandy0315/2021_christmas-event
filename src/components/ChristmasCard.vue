@@ -53,25 +53,6 @@
       >
         START
       </button>
-      <!-- <button
-        class="
-          font-bold
-          text-sm
-          ml-[-50px]
-          bottom-0
-          w-[100px]
-          r
-          absolute
-          inline-block
-          button-none
-          box-border
-          !border-white !border-solid !border-2
-        "
-        @click.prevent="isOpenCard = true"
-        @mouseenter="isHoverLetter = true"
-      >
-        START
-      </button> -->
     </div>
   </div>
 
