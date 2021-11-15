@@ -7,9 +7,7 @@
 import { ref } from 'vue'
 const isNight = ref(false)
 
-const getIsNight = (val) => {
-  isNight.value = val
-}
+const getIsNight = (val) => (isNight.value = val)
 </script>
 <style>
 #app {
