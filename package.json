@@ -1,0 +1,31 @@
+{
+  "name": "windi-project_vite",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore --fix src",
+    "format": "prettier .  --write"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1",
+    "sass": "^1.43.4",
+    "vue": "^3.2.16"
+  },
+  "devDependencies": {
+    "@iconify/json": "^1.1.416",
+    "@vitejs/plugin-vue": "^1.9.3",
+    "@windicss/plugin-animations": "^1.0.9",
+    "eslint": "^8.1.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-vue": "^7.20.0",
+    "prettier": "^2.4.1",
+    "unplugin-icons": "^0.12.16",
+    "unplugin-vue-components": "^0.16.0",
+    "vite": "^2.6.4",
+    "vite-plugin-svg-icons": "^1.0.5",
+    "vite-plugin-windicss": "^1.4.12",
+    "windicss": "^3.1.9"
+  }
+}
