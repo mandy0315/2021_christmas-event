@@ -1,5 +1,6 @@
 <template>
   <div class="card-container relative" :class="[isNight ? 'dark' : 'light']">
+    <snow-background />
     <christmas-card @handleDayClick="handleDay" />
   </div>
 </template>
