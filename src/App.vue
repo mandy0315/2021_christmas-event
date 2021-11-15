@@ -1,7 +1,16 @@
 <template>
-  <div></div>
+  <div class="card-container relative" :class="[isNight ? 'dark' : 'light']">
+    <christmas-card @handleDayClick="handleDay" />
+  </div>
 </template>
-<script setup></script>
+<script setup>
+import { ref } from 'vue'
+const isNight = ref(false)
+
+const handleDay = (val) => {
+  isNight.value = val
+}
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
