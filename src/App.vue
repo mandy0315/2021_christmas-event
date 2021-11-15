@@ -1,5 +1,5 @@
 <template>
-  <div class="card-container relative" :class="[isNight ? 'dark' : 'light']">
+  <div class="card-container" pos="relative" :class="[isNight ? 'dark' : 'light']">
     <christmas-card @handleIsNight="getIsNight" />
   </div>
 </template>
