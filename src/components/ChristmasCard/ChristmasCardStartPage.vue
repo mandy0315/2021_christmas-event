@@ -38,7 +38,7 @@
         m="l-[-50px]"
         p="y-0.5"
         :class="{ '!bg-hex-f6c356': isHoverLetter }"
-        @click.prevent="handleisOpenCard()"
+        @click.prevent="isOpenCard = true"
         @mouseenter="isHoverLetter = true"
       >
         START
@@ -47,13 +47,7 @@
   </div>
 </template>
 <script setup>
-import { ref } from 'vue'
-const isHoverLetter = ref(false),
-  isOpenCard = ref(false),
-  emit = defineEmits(['handleisOpenCard'])
-
-const handleisOpenCard = () => {
-  isOpenCard.value = true
-  emit('handleisOpenCard', isOpenCard.value)
-}
+import { ref, inject } from 'vue'
+const isHoverLetter = ref(false)
+const isOpenCard = inject('isOpenCard')
 </script>

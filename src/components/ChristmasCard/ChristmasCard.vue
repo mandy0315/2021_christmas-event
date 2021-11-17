@@ -1,6 +1,6 @@
 <template>
   <christmas-card-snow-bg />
-  <christmas-card-start-page @handleisOpenCard="getisOpenCard" />
+  <christmas-card-start-page />
   <christmas-card-main-page :is-open-card="isOpenCard" />
 
   <!-- 按鈕：返回與白/黑天切換 -->
@@ -25,14 +25,15 @@
   </button>
 </template>
 <script setup>
-import { ref } from 'vue'
+import { ref, provide } from 'vue'
 const isNight = ref(false),
-  isOpenCard = ref(false),
-  emit = defineEmits(['handleIsNight'])
+  isOpenCard = ref(false)
+
+const emit = defineEmits(['handleIsNight'])
+provide('isOpenCard', isOpenCard)
 
 const handleIsNight = () => {
-  isNight.value = !isNight.value === true
+  isNight.value = !isNight.value
   emit('handleIsNight', isNight.value)
 }
-const getisOpenCard = (val) => (isOpenCard.value = val)
 </script>
