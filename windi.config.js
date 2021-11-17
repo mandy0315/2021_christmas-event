@@ -3,7 +3,7 @@ import plugin from 'windicss/plugin'
 // 常用配置
 export default {
   darkMode: 'class', // false,'class','media'
-  attributify: true,
+  attributify: true, // 屬性模式開啟
   theme: {
     colors: {
       ...colors,
@@ -37,9 +37,10 @@ export default {
   shortcuts: {
     'card-container': 'max-w-[1200px] w-full mx-auto',
     'btn-green': 'text-white bg-green-500 hover:bg-green-700',
+    'snow-icon': 'bg-white rounded-1/2 top-0 animate-snow-an z-60 absolute',
   },
   plugins: [
-    // Other plugins
+    // Animation CSS plugins
     require('@windicss/plugin-animations')({
       settings: {
         animatedSpeed: 1000,

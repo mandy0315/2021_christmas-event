@@ -5,28 +5,22 @@
 </template>
 <script setup>
 import { ref, onMounted } from 'vue'
-const snowsEl = ref(null)
+const snowsEl = ref('')
 onMounted(() => {
   setInterval(function createSnows() {
     let snow = document.createElement('div'),
-      snowSize = Math.random() * 5 + 5 + 'px' // 5-10s
+      snowSize = Math.random() * 5 + 5 + 'px' // 5-10 size
 
     snow.classList.add('snow-icon')
     snow.style.width = snowSize
     snow.style.height = snowSize
-    snow.style.left = Math.random() * window.innerWidth + 'px'
-    snow.style.opacity = Math.random()
+    snow.style.left = Math.random() * window.innerWidth + 'px' // 0-視窗大小間
+    snow.style.opacity = Math.random() // 0-1
     snow.style.animationDuration = Math.random() * 3 + 2 + 's' // 2-5s
     snowsEl.value.appendChild(snow)
-
     setTimeout(() => {
       snow.remove()
     }, 5000)
   }, 50)
 })
 </script>
-<style>
-.snow-icon {
-  @apply bg-white rounded-1/2 top-0 animate-snow-an z-60 absolute;
-}
-</style>
