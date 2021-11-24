@@ -5,11 +5,6 @@ export default {
   attributify: true, // 屬性模式開啟
   theme: {
     extend: {
-      backgroundImage: () => ({
-        'tree-img': 'url("./src/assets/images/tree-bg.png")',
-        'title-light-img': 'url("./src/assets/images/light-bg.png")',
-        'santa-svg': 'url("./src/assets/icons/santa.svg")',
-      }),
       colors: {
         // 新增顏色
         'outside-bg': '#eaf9fd',
