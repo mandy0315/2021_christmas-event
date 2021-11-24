@@ -3,7 +3,8 @@
     <div pos="absolute" h="full" w="full">
       <div pos="relative" h="full" w="full">
         <div
-          bg="bottom tree-img no-repeat contain"
+          class="tree-img"
+          bg="bottom no-repeat contain"
           pos="absolute bottom-0"
           h="full"
           w="full"
@@ -11,7 +12,14 @@
           :class="{ 'animate-animated animate-slow animate-slideInUp animate-delay-1s': props.isOpenCard }"
         ></div>
 
-        <div bg="top title-light-img no-repeat contain" pos="absolute top-0" w="full" h="full" opacity="40"></div>
+        <div
+          class="title-light-img"
+          bg="top no-repeat contain"
+          pos="absolute top-0"
+          w="full"
+          h="full"
+          opacity="40"
+        ></div>
 
         <div
           pos="absolute -bottom-1 -right-1"
@@ -35,7 +43,7 @@
           :class="{ 'animate-animated animate-fast animate-zoomIn animate-delay-2s': props.isOpenCard }"
         >
           <div pos="relative" w="full" h="0" p="b-49/50" overflow="hidden">
-            <div bg="santa-svg no-repeat contain" w="full" h="full" pos="absolute top-0 left-0"></div>
+            <div class="santa-svg" bg="no-repeat contain" w="full" h="full" pos="absolute top-0 left-0"></div>
           </div>
         </div>
 
@@ -91,3 +99,14 @@ const props = defineProps({
   isOpenCard: { type: Boolean },
 })
 </script>
+<style scoped>
+.tree-img {
+  background-image: url('../../assets/images/tree-bg.png');
+}
+.title-light-img {
+  background-image: url('../../assets/images/light-bg.png');
+}
+.santa-svg {
+  background-image: url('../../assets/icons/santa.svg');
+}
+</style>
